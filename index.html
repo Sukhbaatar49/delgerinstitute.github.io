@@ -573,17 +573,19 @@
   }
 
   .founder-avatar {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+    width: 120px;
+    height: 120px;
     border: 2px solid rgba(201, 168, 76, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: var(--gold);
     flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .founder-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
   }
 
   .founder-name {
@@ -922,9 +924,9 @@
     <span class="section-label-text">Founding Director</span>
   </div>
   <div class="founder-card reveal">
-    <div class="founder-avatar">D</div>
+    <div class="founder-avatar"><img src="founder.jpg" alt="Sukhbaatar Puntsag"></div>
     <div>
-      <h3 class="founder-name">Delger</h3>
+      <h3 class="founder-name">Sukhbaatar Puntsag</h3>
       <p class="founder-role">Founder & Executive Director</p>
       <p class="founder-bio">
         The Delger Institute was founded with a single conviction: that Mongolia's future will be shaped by the quality of its ideas. As a nation at a critical crossroads — navigating resource wealth, democratic consolidation, and a complex geopolitical position — Mongolia needs an institution committed to rigorous, independent, and honest analysis.<br><br>
