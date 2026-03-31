@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delger Institute | Mongolia's Independent Policy Research Institution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #ffffff;
+  --dark: #ffffff;
+  --dark-2: #f4f6f9;
+  --dark-3: #eaecf2;
+  --mid: #2c3e6b;
+  --border: #dde2ed;
+  --border-light: rgba(30,43,74,0.08);
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+  --gold-pale: rgba(184,134,11,0.08);
+  --white: #ffffff;
+  --off-white: #f8f9fc;
+  --muted: #5a6a8a;
+  --muted-2: #8895b0;
+  --accent-red: #c0392b;
+  --text: #1e2b4a;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  background: #1e2b4a;
+  padding: 0.4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar-left {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.top-bar-right {
+  display: flex;
+  gap: 1.5rem;
+}
+.top-bar-right a {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.top-bar-right a:hover { opacity: 1; }
+
+/* ===== MAIN NAV ===== */
+nav {
+  background: var(--white);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: 64px;
+}
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.8rem 0;
+  border-right: 1px solid var(--border);
+  padding-right: 2rem;
+  margin-right: 0.5rem;
+}
+.nav-brand-en {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e2b4a;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+.nav-brand-mn {
+  font-size: 0.65rem;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+.nav-links {
+  display: flex;
+  align-items: stretch;
+  list-style: none;
+  gap: 0;
+}
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+.nav-links a {
+  display: flex;
+  align-items: center;
+  padding: 0 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5a6a8a;
+  height: 100%;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: #1e2b4a;
+  border-bottom-color: var(--gold);
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav-search {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.nav-search:hover { border-color: var(--gold); color: #1e2b4a; }
+.nav-subscribe {
+  background: var(--gold);
+  color: var(--black);
+  padding: 0.5rem 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.nav-subscribe:hover { background: var(--gold-light); }
+
+/* ===== HERO FEATURE ===== */
+.hero {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  margin-top: 0;
+}
+
+.hero-main {
+  position: relative;
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(160deg, #1e2b4a 0%, #0d1a3a 60%);
+}
+
+.hero-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 60% at 60% 30%, rgba(184,134,11,0.10) 0%, transparent 70%),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 40px,
+      rgba(200,151,58,0.02) 40px,
+      rgba(200,151,58,0.02) 41px
+    );
+}
+
+.hero-main-content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.hero-tag-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+.hero-tag-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 1rem;
+  max-width: 680px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.hero-excerpt {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.hero-author {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--off-white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.hero-date {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.hero-read-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1px;
+  transition: opacity 0.2s;
+  margin-left: auto;
+}
+.hero-read-link:hover { opacity: 0.7; }
+
+/* Hero sidebar */
+.hero-sidebar {
+  display: flex;
+  flex-direction: column;
+  background: #f4f6f9;
+}
+.hero-sidebar-item {
+  padding: 1.5rem;
+  border-bottom: 1px solid #dde2ed;
+  transition: background 0.2s;
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-sidebar-item:hover { background: #eaecf2; }
+.hero-sidebar-item:last-child { border-bottom: none; }
+.sidebar-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.sidebar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e2b4a;
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+.sidebar-date {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+/* ===== SECTION HEADERS ===== */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+  border-bottom: 2px solid var(--gold);
+  margin-bottom: 1.5rem;
+}
+.section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.section-header-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #1e2b4a;
+}
+.section-header-link {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  transition: opacity 0.2s;
+}
+.section-header-link:hover { opacity: 0.7; }
+
+/* ===== MAIN CONTENT AREA ===== */
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+}
+
+/* ===== RESEARCH GRID ===== */
+.research-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+.research-card {
+  padding: 1.8rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.research-card:nth-child(even) { border-right: none; }
+.research-card:nth-child(n+3) { border-bottom: none; }
+.research-card:hover { background: #f0f3fa; }
+.rc-type {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.rc-type-bar {
+  width: 20px;
+  height: 2px;
+  background: var(--gold);
+}
+.rc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e2b4a;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+.rc-excerpt {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+.rc-meta {
+  font-size: 0.72rem;
+  color: var(--muted-2);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.rc-meta-dot { width: 3px; height: 3px; background: var(--muted-2); border-radius: 50%; }
+
+/* ===== PROGRAMS STRIP ===== */
+.programs-strip {
+  background: #f4f6f9;
+  border: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+.programs-strip-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.program-item {
+  padding: 1.5rem;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.program-item:last-child { border-right: none; }
+.program-item:hover { background: var(--dark-3); }
+.program-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
+.program-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #1e2b4a;
+  margin-bottom: 0.3rem;
+}
+.program-desc {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.program-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.6rem;
+}
+
+/* ===== EVENTS ===== */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+.event-item {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.event-item:last-child { border-bottom: none; }
+.event-item:hover { background: var(--dark-2); }
+.event-date-box {
+  background: var(--gold-pale);
+  border: 1px solid rgba(200,151,58,0.2);
+  text-align: center;
+  padding: 0.5rem;
+}
+.event-month {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.event-day {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+.event-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1e2b4a;
+  margin-bottom: 0.2rem;
+}
+.event-info {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.event-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar { display: flex; flex-direction: column; gap: 2rem; }
+
+.sidebar-widget {
+  border: 1px solid var(--border);
+  background: var(--white);
+}
+.sidebar-widget-header {
+  background: #1e2b4a;
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.sidebar-widget-body { padding: 1.2rem; }
+
+/* Expert cards */
+.expert-card {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+.expert-card:last-child { border-bottom: none; padding-bottom: 0; }
+.expert-avatar {
+  width: 44px;
+  height: 44px;
+  background: #eaecf2;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--gold);
+}
+.expert-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1e2b4a;
+  margin-bottom: 0.15rem;
+}
+.expert-role {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Topics widget */
+.topics-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.topic-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.topic-tag:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Newsletter widget */
+.newsletter-widget input {
+  width: 100%;
+  background: #f4f6f9;
+  border: 1px solid var(--border);
+  color: #1e2b4a;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.82rem;
+  font-family: 'Source Sans 3', sans-serif;
+  margin-bottom: 0.6rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.newsletter-widget input::placeholder { color: #8895b0; }
+.newsletter-widget input:focus { border-color: var(--gold); }
+.newsletter-widget button {
+  width: 100%;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+}
+.newsletter-widget button:hover { background: var(--gold-light); }
+.newsletter-widget p {
+  font-size: 0.68rem;
+  color: var(--muted-2);
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+
+/* About widget */
+.about-widget-text {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.about-widget-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+}
+.about-stat-label { color: var(--muted); }
+.about-stat-value { color: var(--gold); font-weight: 600; }
+
+/* ===== ANALYSIS SECTION (full width) ===== */
+.full-width-section {
+  background: #1e2b4a;
+  border-top: 1px solid #1e2b4a;
+  border-bottom: 1px solid #1e2b4a;
+  padding: 3rem 0;
+  margin-bottom: 0;
+}
+.full-width-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+}
+.analysis-card {
+  padding: 1.8rem;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.analysis-card:last-child { border-right: none; }
+.analysis-card:hover { background: rgba(255,255,255,0.05); }
+.ac-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.1);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.ac-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+.ac-desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+/* ===== ABOUT STRIP ===== */
+.about-strip {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.about-strip-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #1e2b4a;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.about-strip-title em { font-style: italic; color: var(--gold-light); }
+.about-strip-text {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+.about-strip-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+.about-strip-cta:hover { opacity: 0.7; }
+.about-strip-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #1e2b4a;
+  border: 1px solid var(--border);
+}
+.about-stat-box {
+  background: var(--white);
+  padding: 1.5rem;
+  text-align: center;
+}
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--white);
+  border-top: 3px solid var(--gold);
+}
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem 1.5rem;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1.5rem;
+}
+.footer-brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+.footer-brand-mn {
+  font-size: 0.65rem;
+  color: #d4a017;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+.footer-brand-desc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.footer-col-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d4a017;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-col-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-col-links a {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+}
+.footer-col-links a:hover { color: #d4a017; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copy {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+}
+.footer-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ===== MOBILE NAV TOGGLE ===== */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--white);
+  padding: 0.4rem 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ===== SEARCH OVERLAY ===== */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,20,60,0.97);
+  z-index: 500;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+}
+.search-overlay.active { display: flex; }
+.search-box {
+  width: 100%;
+  max-width: 700px;
+  padding: 0 2rem;
+}
+.search-box input {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--gold);
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  padding: 0.5rem 0;
+  outline: none;
+}
+.search-box input::placeholder { color: var(--muted-2); }
+.search-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-sidebar { display: none; }
+  .main-content { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 768px) {
+  .top-bar { display: none; }
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: block; }
+  .research-grid { grid-template-columns: 1fr; }
+  .research-card { border-right: none !important; }
+  .programs-strip-inner { grid-template-columns: 1fr 1fr; }
+  .analysis-grid { grid-template-columns: 1fr; }
+  .analysis-card { border-right: none; border-bottom: 1px solid var(--border); }
+  .about-strip { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-top { grid-template-columns: 1fr; }
+  .hero-main { min-height: 400px; }
+  .hero-main-content { padding: 2rem; }
+  .event-item { grid-template-columns: 60px 1fr; }
+  .event-tag { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <input type="text" placeholder="Search research, experts, topics…" autofocus>
+  </div>
+  <button class="search-close" onclick="document.getElementById('searchOverlay').classList.remove('active')">✕</button>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span class="top-bar-left">Delger Institute · Дэлгэрийн Бодлогын Хүрээлэн · Ulaanbaatar, Mongolia</span>
+  <div class="top-bar-right">
+    <a href="#">Mongolian</a>
+    <a href="#">English</a>
+    <a href="#">Contact</a>
+    <a href="#">Press</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <span class="nav-brand-en">Delger Institute</span>
+      <span class="nav-brand-mn">Дэлгэрийн Бодлогын Хүрээлэн</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#experts">Experts</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="mobile-menu-btn">☰</button>
+      <button class="nav-search" onclick="document.getElementById('searchOverlay').classList.add('active')">⌕ Search</button>
+      <button class="nav-subscribe" onclick="document.getElementById('newsletter-widget').scrollIntoView({behavior:'smooth'})">Subscribe</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-main">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-main-content">
+      <div class="hero-tag">
+        <div class="hero-tag-dot"></div>
+        <span class="hero-tag-text">Featured Analysis</span>
+      </div>
+      <h1 class="hero-title">
+        Mongolia's Democratic Crossroads: <em>Institutions, Trust, and the Path Forward</em>
+      </h1>
+      <p class="hero-excerpt">
+        Three decades after Mongolia's peaceful democratic revolution, the country's institutions face mounting pressures from corruption, political polarization, and public disillusionment. What must change — and how?
+      </p>
+      <div class="hero-meta">
+        <span class="hero-author">Sukhbaatar Puntsag</span>
+        <span class="hero-date">Forthcoming · 2026</span>
+        <a href="#publications" class="hero-read-link">Read Analysis →</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-sidebar">
+    <div class="hero-sidebar-item">
+      <div class="sidebar-tag">Governance</div>
+      <div class="sidebar-title">Anti-Corruption Frameworks: What Works in Resource-Rich Democracies?</div>
+      <div class="sidebar-date">Forthcoming · 2026</div>
+    </div>
+    <div class="hero-sidebar-item">
+      <div class="sidebar-tag">Foreign Policy</div>
+      <div class="sidebar-title">The Third Neighbor Doctrine: Origins, Relevance, and Future Challenges</div>
+      <div class="sidebar-date">Forthcoming · 2026</div>
+    </div>
+    <div class="hero-sidebar-item">
+      <div class="sidebar-tag">Rule of Law</div>
+      <div class="sidebar-title">Judicial Independence in Mongolia: An Assessment of Constitutional Gaps</div>
+      <div class="sidebar-date">Forthcoming · 2026</div>
+    </div>
+    <div class="hero-sidebar-item">
+      <div class="sidebar-tag">Economy</div>
+      <div class="sidebar-title">Beyond Mining: Diversification Strategies for Mongolia's Next Economy</div>
+      <div class="sidebar-date">Forthcoming · 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+  <div class="main-col">
+
+    <!-- RESEARCH SECTION -->
+    <div id="research" class="reveal">
+      <div class="section-header">
+        <div class="section-header-left">
+          <span class="section-header-title">Latest Research</span>
+        </div>
+        <a href="#" class="section-header-link">View All →</a>
+      </div>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="rc-type"><div class="rc-type-bar"></div>Policy Brief</div>
+          <div class="rc-title">Electoral Reform and Voter Representation in Mongolia's Parliamentary System</div>
+          <div class="rc-excerpt">An examination of Mongolia's mixed electoral system and its implications for political representation, party fragmentation, and governmental stability.</div>
+          <div class="rc-meta">
+            <span>Sukhbaatar Puntsag</span>
+            <div class="rc-meta-dot"></div>
+            <span>Forthcoming 2026</span>
+          </div>
+        </div>
+        <div class="research-card">
+          <div class="rc-type"><div class="rc-type-bar"></div>Commentary</div>
+          <div class="rc-title">Mongolia's Foreign Policy Between Two Giants: Strategic Autonomy in a Constrained World</div>
+          <div class="rc-excerpt">How Mongolia navigates its landlocked geography and great power neighborhood to maintain meaningful sovereignty and pursue national interests.</div>
+          <div class="rc-meta">
+            <span>Sukhbaatar Puntsag</span>
+            <div class="rc-meta-dot"></div>
+            <span>Forthcoming 2026</span>
+          </div>
+        </div>
+        <div class="research-card">
+          <div class="rc-type"><div class="rc-type-bar"></div>Report</div>
+          <div class="rc-title">Measuring Democratic Backsliding: A Mongolia Governance Index</div>
+          <div class="rc-excerpt">A proposed framework for systematically tracking institutional quality, civil liberties, and rule of law indicators specific to Mongolia's context.</div>
+          <div class="rc-meta">
+            <span>Delger Institute</span>
+            <div class="rc-meta-dot"></div>
+            <span>Forthcoming 2026</span>
+          </div>
+        </div>
+        <div class="research-card">
+          <div class="rc-type"><div class="rc-type-bar"></div>Working Paper</div>
+          <div class="rc-title">Civic Education and Democratic Participation Among Mongolia's Youth</div>
+          <div class="rc-excerpt">Survey-based research on political knowledge, trust in institutions, and civic engagement among Mongolians aged 18–35 in urban and rural areas.</div>
+          <div class="rc-meta">
+            <span>Delger Institute</span>
+            <div class="rc-meta-dot"></div>
+            <span>Forthcoming 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRAMS -->
+    <div id="programs" class="reveal">
+      <div class="section-header">
+        <div class="section-header-left">
+          <span class="section-header-title">Research Programs</span>
+        </div>
+        <a href="#" class="section-header-link">All Programs →</a>
+      </div>
+      <div class="programs-strip">
+        <div class="programs-strip-inner">
+          <div class="program-item">
+            <div class="program-icon">🏛️</div>
+            <div class="program-name">Governance & Democracy</div>
+            <div class="program-desc">Institutional reform, electoral integrity, anti-corruption</div>
+            <div class="program-link">Explore →</div>
+          </div>
+          <div class="program-item">
+            <div class="program-icon">⚖️</div>
+            <div class="program-name">Rule of Law</div>
+            <div class="program-desc">Judicial independence, legal reform, constitutional development</div>
+            <div class="program-link">Explore →</div>
+          </div>
+          <div class="program-item">
+            <div class="program-icon">🌏</div>
+            <div class="program-name">Foreign Policy</div>
+            <div class="program-desc">Geopolitics, third neighbor doctrine, sovereignty</div>
+            <div class="program-link">Explore →</div>
+          </div>
+          <div class="program-item">
+            <div class="program-icon">📊</div>
+            <div class="program-name">Economic Policy</div>
+            <div class="program-desc">Resource governance, diversification, fiscal policy</div>
+            <div class="program-link">Explore →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVENTS -->
+    <div id="events" class="reveal">
+      <div class="section-header">
+        <div class="section-header-left">
+          <span class="section-header-title">Upcoming Events</span>
+        </div>
+        <a href="#" class="section-header-link">Full Calendar →</a>
+      </div>
+      <div class="events-list">
+        <div class="event-item">
+          <div class="event-date-box">
+            <div class="event-month">Apr</div>
+            <div class="event-day">15</div>
+          </div>
+          <div>
+            <div class="event-title">Inaugural Public Lecture: Mongolia's Democratic Future</div>
+            <div class="event-info">Ulaanbaatar · In-Person & Online · Free Admission</div>
+          </div>
+          <div class="event-tag">Lecture</div>
+        </div>
+        <div class="event-item">
+          <div class="event-date-box">
+            <div class="event-month">May</div>
+            <div class="event-day">08</div>
+          </div>
+          <div>
+            <div class="event-title">Policy Roundtable: Anti-Corruption Mechanisms in Emerging Democracies</div>
+            <div class="event-info">Ulaanbaatar · Closed Roundtable · Invitation Only</div>
+          </div>
+          <div class="event-tag">Roundtable</div>
+        </div>
+        <div class="event-item">
+          <div class="event-date-box">
+            <div class="event-month">Jun</div>
+            <div class="event-day">21</div>
+          </div>
+          <div>
+            <div class="event-title">First Annual Delger Institute Policy Forum</div>
+            <div class="event-info">Ulaanbaatar · Full Day Conference · Registration Required</div>
+          </div>
+          <div class="event-tag">Conference</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <!-- Newsletter -->
+    <div class="sidebar-widget" id="newsletter-widget">
+      <div class="sidebar-widget-header">Research Updates</div>
+      <div class="sidebar-widget-body newsletter-widget">
+        <input type="text" placeholder="Full name">
+        <input type="email" placeholder="Email address">
+        <button onclick="handleSubscribe(this)">Subscribe Free</button>
+        <p>Monthly policy briefs and research updates. No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+
+    <!-- Experts -->
+    <div class="sidebar-widget" id="experts">
+      <div class="sidebar-widget-header">Our Experts</div>
+      <div class="sidebar-widget-body">
+        <div class="expert-card">
+          <div class="expert-avatar">
+            <img src="founder.jpg" alt="Sukhbaatar Puntsag" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.innerHTML='S'">
+          </div>
+          <div>
+            <div class="expert-name">Sukhbaatar Puntsag</div>
+            <div class="expert-role">Founder & Executive Director · Governance & Democracy</div>
+          </div>
+        </div>
+        <div class="expert-card">
+          <div class="expert-avatar">+</div>
+          <div>
+            <div class="expert-name">Senior Fellows</div>
+            <div class="expert-role">Positions opening 2026 — join our founding team</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topics -->
+    <div class="sidebar-widget">
+      <div class="sidebar-widget-header">Research Topics</div>
+      <div class="sidebar-widget-body">
+        <div class="topics-cloud">
+          <span class="topic-tag">Democracy</span>
+          <span class="topic-tag">Anti-Corruption</span>
+          <span class="topic-tag">Foreign Policy</span>
+          <span class="topic-tag">Rule of Law</span>
+          <span class="topic-tag">Elections</span>
+          <span class="topic-tag">Mining Governance</span>
+          <span class="topic-tag">Civil Society</span>
+          <span class="topic-tag">Geopolitics</span>
+          <span class="topic-tag">Judiciary</span>
+          <span class="topic-tag">Fiscal Policy</span>
+          <span class="topic-tag">China-Mongolia</span>
+          <span class="topic-tag">Russia-Mongolia</span>
+          <span class="topic-tag">Youth</span>
+          <span class="topic-tag">Media Freedom</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- About mini -->
+    <div class="sidebar-widget">
+      <div class="sidebar-widget-header">About the Institute</div>
+      <div class="sidebar-widget-body">
+        <div class="about-widget-text">The Delger Institute is Mongolia's independent policy research institution, dedicated to strengthening democratic foundations through rigorous, nonpartisan analysis.</div>
+        <div class="about-widget-stat">
+          <span class="about-stat-label">Founded</span>
+          <span class="about-stat-value">2026</span>
+        </div>
+        <div class="about-widget-stat">
+          <span class="about-stat-label">Location</span>
+          <span class="about-stat-value">Ulaanbaatar</span>
+        </div>
+        <div class="about-widget-stat">
+          <span class="about-stat-label">Focus</span>
+          <span class="about-stat-value">Governance & Democracy</span>
+        </div>
+        <div class="about-widget-stat">
+          <span class="about-stat-label">Affiliation</span>
+          <span class="about-stat-value">Nonpartisan</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FULL WIDTH: KEY ISSUES -->
+<div class="full-width-section">
+  <div class="full-width-inner">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <span class="section-header-title">Mongolia's Most Pressing Policy Challenges</span>
+      </div>
+    </div>
+    <div class="analysis-grid reveal">
+      <div class="analysis-card">
+        <div class="ac-number">01</div>
+        <div class="ac-title">Institutional Erosion & Democratic Backsliding</div>
+        <div class="ac-desc">Mongolia's democratic institutions have weakened over time. Identifying the mechanisms of erosion and effective countermeasures is the Institute's core mission.</div>
+      </div>
+      <div class="analysis-card">
+        <div class="ac-number">02</div>
+        <div class="ac-title">Corruption & the Resource Curse</div>
+        <div class="ac-desc">Mining wealth has fueled both development and corruption. Mongolia must build transparent, accountable governance of its natural resource revenues.</div>
+      </div>
+      <div class="analysis-card">
+        <div class="ac-number">03</div>
+        <div class="ac-title">Geopolitical Sovereignty Between Giants</div>
+        <div class="ac-desc">Landlocked between Russia and China, Mongolia's ability to preserve genuine independence requires sophisticated, evidence-based foreign policy analysis.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip" id="about">
+  <div class="reveal">
+    <h2 class="about-strip-title">Built to serve <em>Mongolia</em> — not any party, donor, or foreign interest.</h2>
+    <p class="about-strip-text">The Delger Institute was founded in 2026 by Sukhbaatar Puntsag with a single conviction: that Mongolia's future will be shaped by the quality of its ideas. We produce rigorous, independent research on governance, democracy, and public policy — freely available to every Mongolian citizen.</p>
+    <p class="about-strip-text">We are nonpartisan, transparently funded, and committed to intellectual honesty above all else. When our findings are uncomfortable, we publish them anyway.</p>
+    <a href="#" class="about-strip-cta">Learn More About Us →</a>
+  </div>
+  <div class="reveal">
+    <div class="about-strip-right">
+      <div class="about-stat-box">
+        <div class="stat-number">2026</div>
+        <div class="stat-label">Year Founded</div>
+      </div>
+      <div class="about-stat-box">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Research Programs</div>
+      </div>
+      <div class="about-stat-box">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Open Access</div>
+      </div>
+      <div class="about-stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Party Affiliations</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Delger Institute</div>
+        <div class="footer-brand-mn">Дэлгэрийн Бодлогын Хүрээлэн</div>
+        <div class="footer-brand-desc">Mongolia's independent policy research institution, dedicated to strengthening democratic foundations through rigorous, nonpartisan analysis. Established 2026, Ulaanbaatar.</div>
+        <div style="font-size:0.72rem;color:var(--muted-2);">© 2026 Delger Institute · All research freely available</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Research</div>
+        <ul class="footer-col-links">
+          <li><a href="#">All Publications</a></li>
+          <li><a href="#">Policy Briefs</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Commentaries</a></li>
+          <li><a href="#">Working Papers</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Programs</div>
+        <ul class="footer-col-links">
+          <li><a href="#">Governance & Democracy</a></li>
+          <li><a href="#">Rule of Law</a></li>
+          <li><a href="#">Foreign Policy</a></li>
+          <li><a href="#">Economic Policy</a></li>
+          <li><a href="#">Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Institute</div>
+        <ul class="footer-col-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Experts</a></li>
+          <li><a href="#">Mission & Values</a></li>
+          <li><a href="#">Funding & Transparency</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">Independent · Nonpartisan · Mongolia-First · delgerinstitute.org</div>
+      <div class="footer-tagline">"Where Mongolia's future takes shape."</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Newsletter
+function handleSubscribe(btn) {
+  const inputs = btn.parentElement.querySelectorAll('input');
+  const name = inputs[0].value.trim();
+  const email = inputs[1].value.trim();
+  if (!name || !email || !email.includes('@')) {
+    alert('Please enter your name and a valid email address.');
+    return;
+  }
+  inputs[0].value = '';
+  inputs[1].value = '';
+  btn.textContent = '✓ Subscribed!';
+  btn.style.background = '#2d5a2d';
+  btn.style.color = '#7acc7a';
+  setTimeout(() => {
+    btn.textContent = 'Subscribe Free';
+    btn.style.background = '';
+    btn.style.color = '';
+  }, 4000);
+}
+
+// Smooth nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Close search on escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('searchOverlay').classList.remove('active');
+});
+</script>
+</body>
+</html>
